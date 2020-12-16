@@ -33,7 +33,8 @@ public class Login extends HttpServlet {
 		if("admin".equals(login) && "admin".equals(password)) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("isConnected", true);
-			session.setAttribute("role", "ADMIN");	
+			session.setAttribute("role", "ADMIN");
+			session.setAttribute("nom", login);
 			response.sendRedirect(request.getContextPath() + "/Index");
 		}
 		else if("user".equals(login) && "user".equals(password)) {

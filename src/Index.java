@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Index
@@ -32,7 +33,7 @@ public class Index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("Article", Article.getArticle());
-
+        
 		RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/jsp/Index.jsp");
 
         rd.forward(request, response);	}
