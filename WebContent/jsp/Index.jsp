@@ -32,7 +32,7 @@
 						<td>${p.value[1]}</td>
 						<td>${p.value[2]}</td>
 						<td>${p.value[3]}</td>
-						<td><i class="fas fa-trash"></i>  &nbsp <i class="fas fa-pencil-alt"></i></td>
+						<td><a href="/E-Commerce/SupprimerArticle?codeBarre=${p.key}" ><i class="fas fa-trash"></i></a> &nbsp <a href="/E-Commerce/ModifierArticle"><i class="fas fa-pencil-alt"></i></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

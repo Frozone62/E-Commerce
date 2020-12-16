@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,9 +29,14 @@ public class SupprimerArticle extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = this.getServletContext()
-                .getRequestDispatcher("/jsp/Supprimer.jsp");
-
+		RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/jsp/Supprimer.jsp");
+		Article leArticle = new Article();
+		
+		List<String> listeArticle = Article.getLeArticle(Long.parseLong(request.getParameter("codeBarre")));
+		request.setAttribute("LibelleArticle", listeArticle.get(1));
+        request.setAttribute("ReferenceArticle", listeArticle.get(0));
+        request.setAttribute("PrixHTArticle", listeArticle.get(2));
+        request.setAttribute("TauxTVAArticle", listeArticle.get(3));
         rd.forward(request, response);
 	}
 
@@ -38,8 +44,17 @@ public class SupprimerArticle extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+		Long CodeBarre = Long.parseLong(request.getParameter("codeBarre"));
+		
+		Article leArticle = new Article();
+		
+		Article.Article.remove(CodeBarre);
+
+		System.out.println(CodeBarre);
+		
+		response.sendRedirect(request.getContextPath() + "/Index");
+
 	}
 
 }

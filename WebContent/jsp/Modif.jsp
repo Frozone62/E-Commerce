@@ -1,34 +1,95 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Modifier un article</title>
-</head>
-<body>
-    <h1>Modifier Votre  Article</h1>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
-    <form method="POST">
+<%@ include file="Base.jsp"%>
 
-        <p>Votre Code Barre : <input type="long" name="codebarre"></p>
+<div class="mb-auto p-2">
+	<div class="d-flex justify-content-center">
+		<div class="shadow p-3 mb-5 bg-white rounded">
+			<div class="row">
+				<div class="col-8">
+					<h1>Modifier Votre Article</h1>
+					<br>
+				</div>
+				<div class="row">
+					<div class="panel-body">
+						<form method="POST">
+							<div class="row">
+								<div class="col-12">
+									<div class="input-group input-group-sm mb-12">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm"
+												style="width: 150px;">Code Barre : </span>
+										</div>
+										<input type="long" name="CodeBarre" placeholder='Code Barre'
+											disabled="disabled" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="input-group input-group-sm mb-12">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm"
+												style="width: 150px;">Reference :</span>
+										</div>
+										<input type="text" name="ReferenceArticle"
+											placeholder='Reference'>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="input-group input-group-sm mb-12">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm"
+												style="width: 150px;">Libelle :</span>
+										</div>
+										<input type="text" name="LibelleArticle" placeholder='Libelle'>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="input-group input-group-sm mb-6">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm"
+												style="width: 150px;">Prix HT : </span>
+										</div>
+										<input type="number" name="PrixHTArticle"
+											placeholder='Prix Hors Taxes'>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="input-group mb-6">
+										<div class="input-group-prepend">
+											<label class="input-group-text" for="inputGroupSelect01"
+												style="width: 150px;">TVA :</label>
+										</div>
+										<select name="TauxTVAArticle" class="custom-select"
+											id="TauxTVAArticle">
+											<option selected>--Choisir une option--</option>
+											<option value="550">5,50%</option>
+											<option value="2000">20,00%</option>
+										</select>
+									</div>
 
-        <p> La Reference : <input type="text" name="reference"></p>
+								</div>
+							</div>
+							<br>
 
-        <p> Le Libelle : <input type="text" name="libelle"></p>
-
-        <p>Prix HT : <input type="number" name="prixht"></p>
-
-        <p>Taux TVA :
-        <select name="tauxtva"
-            id="pet-select">
-            <option value="">--Choisir une option--</option>
-            <option value="1">5,50%</option>
-            <option value="2">20,00%</option>
-        </select>
-        </p>
-
-        <br>
-        <button type="submit">Valider votre Modification</button>
-    </form>
-
+							<div class="d-flex justify-content-center">
+								<button type="submit" class="btn btn-warning">Valider
+									votre Modification</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

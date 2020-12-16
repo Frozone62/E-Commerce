@@ -14,7 +14,11 @@ public class Article {
 	public static HashMap<Long,List<String>> getArticle(){
 		return Article;
 	}
-
+	
+	public static List<String> getLeArticle(long codeBarre){
+		return Article.get(codeBarre);
+	}
+	
 	public Integer getTauxTva(int tauxTVA) {
 		return this.tva[tauxTVA];
 	}
