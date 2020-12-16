@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous"><link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+
 </head>
 <body class="bg-light">
 
@@ -43,4 +45,3 @@
 		</div>
 
 	</nav>
-<script src="js/fontawesome.min.js"></script>

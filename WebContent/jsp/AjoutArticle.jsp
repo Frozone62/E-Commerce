@@ -69,8 +69,8 @@
 										<select name="TauxTVAArticle" class="custom-select"
 											id="TauxTVAArticle">
 											<option selected>--Choisir une option--</option>
-											<option value="1">5,50%</option>
-											<option value="2">20,00%</option>
+											<option value="550">5,50%</option>
+											<option value="2000">20,00%</option>
 										</select>
 									</div>
 

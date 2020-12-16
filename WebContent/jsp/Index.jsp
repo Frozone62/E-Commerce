@@ -9,12 +9,6 @@
 		<div class="row">
 			<div class="col">
 				<h4>Liste des articles</h4>
-				<i class="fas fa-camera"></i>
-				<!-- this icon's 1) style prefix == fas and 2) icon name == camera -->
-				<i class="fas fa-camera"></i>
-				<!-- using an <i> element to reference the icon -->
-				<span class="fas fa-camera"></span>
-				<!-- using a <span> element to reference the icon -->
 			</div>
 		</div>
 
@@ -38,7 +32,7 @@
 						<td>${p.value[1]}</td>
 						<td>${p.value[2]}</td>
 						<td>${p.value[3]}</td>
-						<td><i class="fab fa-500px"></i></td>
+						<td><i class="fas fa-trash"></i>  &nbsp <i class="fas fa-pencil-alt"></i></td>
 					</tr>
 				</c:forEach>
 			</tbody>
