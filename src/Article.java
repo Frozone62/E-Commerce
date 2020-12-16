@@ -1,61 +1,21 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class Article {
-	
-	long codeBarre;
-	String reference;
-	String libelle;
-	Integer prixHT;
-	Integer tauxTva;
-	
+
+	public static HashMap<Long,List<String>> Article = new HashMap<>();
 	public static final Integer[] tva = { 550, 2000 };
-	
-	Article(long codeBarre, String reference, String libelle, Integer prixHT,Integer tauxTva){
-		this.codeBarre = codeBarre;
-		this.reference = reference;
-		this.libelle = libelle;
-		this.prixHT = prixHT;
-		this.tauxTva =tauxTva;
-	}
-
-	public long getCodeBarre() {
-		return codeBarre;
-	}
-
-	public void setCodeBarre(long codeBarre) {
-		this.codeBarre = codeBarre;
-	}
-
-	public String getReference() {
-		return reference;
-	}
-
-	public void setReference(String reference) {
-		this.reference = reference;
-	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-
-	public Integer getPrixHT() {
-		return prixHT;
-	}
-
-	public void setPrixHT(Integer prixHT) {
-		this.prixHT = prixHT;
-	}
-
-	public Integer getTauxTva() {
-		return tauxTva;
-	}
-
-	public void setTauxTva(Integer tauxTva) {
-		this.tauxTva = tauxTva;
+		
+	public void setArticle(long codeBarre, String reference, String libelle, String prixHT,String tauxTva) {
+		Article.put(codeBarre, Arrays.asList(new String[] {reference,libelle ,prixHT , tauxTva}));
 	}
 	
-	
+	public static HashMap<Long,List<String>> getArticle(){
+		return Article;
+	}
+
+	public Integer getTauxTva(int tauxTVA) {
+		return this.tva[tauxTVA];
+	}
 }

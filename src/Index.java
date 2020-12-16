@@ -19,8 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	HashMap<Integer, List<String>> ProduitMap = AjoutArticle.getMap();
-
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +31,7 @@ public class Index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ProduitMap", ProduitMap);
+        request.setAttribute("Article", Article.getArticle());
 
 		RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/jsp/Index.jsp");
 

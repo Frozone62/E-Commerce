@@ -36,7 +36,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="p" items="${ProduitMap}">
+			<c:forEach var="p" items="${Article}">
 
 				<tr>
 					<td>${p.key}</td>

@@ -21,7 +21,6 @@ public class AjoutArticle extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	static HashMap<Integer, List<String>> ProduitMap = new HashMap<>();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,33 +33,18 @@ public class AjoutArticle extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String ReferenceArticle = request.getParameter("ReferenceArticle");
 		String LibelleArticle = request.getParameter("LibelleArticle");
 		String PrixHTArticle = request.getParameter("PrixHTArticle");
-		Integer TauxTVAArticle = Integer.parseInt(request.getParameter("TauxTVAArticle"));
-		Integer TauxTVA; 
-		if(TauxTVAArticle == 1) {
-			TauxTVA = 550;
-		}
-		else if(TauxTVAArticle == 2){
-			TauxTVA=2000;
-		}
-		else {
-			TauxTVA = 0;
-		}
-		String TauxTVAString = String.valueOf(TauxTVA);
+		String TauxTVAArticle = request.getParameter("TauxTVAArticle");
+		
 		Integer CodeBarre = Integer.parseInt(request.getParameter("CodeBarre"));
+		
+		Article leArticle = new Article();
+		leArticle.setArticle(CodeBarre,ReferenceArticle, LibelleArticle, PrixHTArticle, TauxTVAArticle);
+		
+		response.sendRedirect(request.getContextPath() + "/Index");
 
-		ProduitMap.put(CodeBarre,Arrays.asList(new String[] { ReferenceArticle, LibelleArticle, PrixHTArticle, TauxTVAString }));
-		request.setAttribute("ProduitMap", ProduitMap);
-		RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/jsp/Index.jsp");
-		rd.forward(request, response);
-
-	}
-
-	public static HashMap<Integer, List<String>> getMap() {
-		return ProduitMap;
 	}
 }
